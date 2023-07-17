@@ -161,8 +161,12 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-   let iguales = array[0]
-   return array.every(elem => elem = iguales)
+   const primerElemento = array[0];
+   if(array.every((elemento) => elemento === array[0])) {
+      return true
+   }else {
+      return false
+   }
 }
 
 function mesesDelAño(array) {
@@ -170,18 +174,42 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var mesesPedidos = [];
+   var mesesBuscados = ["Enero", "Marzo", "Noviembre"];
+   for (var i = 0; i < array.length; i++) {
+      if (mesesBuscados.includes(array[i])) {
+         mesesPedidos.push(array[i]);
+      }
+   }
+   if (mesesPedidos.length === mesesBuscados.length) {
+      return mesesPedidos;
+   } else {
+      return "No se encontraron los meses pedidos";
+   } 
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   let tabla = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10]
+   let tablaSeis = []
+   for(var i = 0; i <= tabla.length - 1; i++) {
+         tablaSeis.push(tabla[i] * 6)
+   }
+   return tablaSeis
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   let masDeCien = []
+   for(var i = 0; i < array.length; i++) {
+      if(array[i] > 100)
+      masDeCien.push(array[i])
+   }
+   return masDeCien
 }
 
 /* ----------------------------------------------------------------------------------
